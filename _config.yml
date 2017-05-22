@@ -1,0 +1,21 @@
+
+# Build settings
+markdown: kramdown
+# theme: minima
+# gems:
+#   - jekyll-feed
+exclude:
+  - Gemfile
+  - Gemfile.lock
+
+defaults:
+  - scope:
+      path: ""
+      type: people
+    values:
+      layout: person
+
+collections:
+  people: 
+    output: true
+    permalink: /people/:path/

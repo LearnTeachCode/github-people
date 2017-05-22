@@ -1,0 +1,164 @@
+
+
+  /* =Type
+  ----------------------------------------------- */
+  body {
+    font: 100%/1.5 "Helvetica Neue", Helvetica, Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  main {
+    padding: 1.5em 1.5em 6em;
+    max-width: 33em;
+  }
+  h1 {
+    font-size: 2em;
+    font-weight: normal;
+    margin-bottom: 0;
+  }
+  h2 {
+    /* @h2 */
+    font-size: 1.5em;
+    font-weight: normal;    
+  }
+
+  /* OPTIONAL: Move the main headline and date closer together */
+  h1 {
+    margin-bottom: 0;
+  }
+  h1 + p {
+    margin-top: 0;
+  }
+
+  section {
+    margin-bottom: 3em;
+  }
+
+  /* =Color
+  ----------------------------------------------- */
+  body {
+    background: rgb(242, 242, 242);
+    color: rgb(51, 51, 51);
+  }
+  a {
+    color: inherit;
+  }
+  a:hover,
+  a:active,
+  a:focus {
+    color: black;
+  }
+
+
+  /* =Field
+  ----------------------------------------------- */
+  textarea {
+    margin-top: 0.375em;
+    padding: 0.75em;
+    font-family: inherit;
+    font-size: 1.5em;
+    width: 100%;
+    max-width: 33em;
+    height: 6.75em;
+    box-sizing: border-box;
+    border-width: 0;
+    border-radius: 0.25em;
+  }
+  label span.label {
+    display: block;
+
+    /* @h2 */
+    font-size: 1.5em;
+    font-weight: normal;
+    margin-top: 3em;
+  }
+  label br {
+    display: none;
+  }
+
+
+  /* =Button / Action
+  ----------------------------------------------- */
+  .action,
+  button {
+    background: rgb(51, 51, 51);
+    color: white;
+    border-radius: 0.25em;
+    border-width: 0;
+    font-family: inherit;
+    font-size: 1em;
+    padding: 0.5em 1em;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  .action:hover,
+  .action:active,
+  .action:focus 
+  button:hover,
+  button:active,
+  button:focus {
+    background: black;
+    color: white;
+  }
+
+
+  /* =Blockquote
+  ----------------------------------------------- */
+  blockquote {
+    margin: 0;
+    padding: 0;
+    font-style: italic;
+  }
+  blockquote p::before {
+    content: "“";
+  }
+  blockquote p::after {
+    content: "”";
+  }
+
+
+  /* =Success Message
+  ----------------------------------------------- */
+  .success {
+    margin: 3em 0;
+    background: rgba(0, 0, 0, 0.05);
+    padding: 1.5em;
+    border-radius: 0.25em;
+  }
+  .success h1,
+  .success p {
+    margin: 0;
+  }
+
+    /* =Interactive Elements
+  ----------------------------------------------- */
+  .hidden {
+    display: none;
+  }
+
+  /* =Layout
+  ----------------------------------------------- */
+
+  /* OPTIONAL: Center the page content horizontally */
+  main {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* OPTIONAL: Center the page content vertically */
+  @supports (display: grid) {
+    html, body {
+      height: 100%; /* SHIM: Make the “html” and “body” elements fill the height of the viewport */
+    }
+    body {
+      display: grid;
+      grid-template-columns: 100vw; /* One giant column that fills the viewport width */
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* SHIM: This doesn’t seem quite right. Is there a way to ask a grid item to “shrink to fit” its content? */
+    main {
+      display: inline-block;
+    }
+  }

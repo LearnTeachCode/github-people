@@ -1,0 +1,27 @@
+---
+layout: default
+title: The People of Learn Teach Code
+---
+
+<h1>The People of Learn Teach Code</h1>
+
+<ul>
+{% for person in site.people %}
+
+	<li>
+
+		<h3><a href="{{ person.url }}">{{ person.name }}</a></h3>
+
+		<p>area: {{ person.area }}</p>
+		<p>subject: {{ person.subject }}</p>
+
+		<p>GitHub Username: <a href="https://github.com/{{ person.github_username }}">{{ person.github_username }}</a></p>
+
+		<img src="{{ person.picture }}" alt="{{ person.name }}" width="400" />
+
+		{{ person.content | markdownify }}
+
+	</li>
+
+{% endfor %}
+<ul>
