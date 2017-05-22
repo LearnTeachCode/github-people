@@ -1,0 +1,84 @@
+---
+
+---
+
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Add your notes, Intro to JavaScript Workshop</title>
+
+  <link rel="stylesheet" href="style.css" />
+
+</head>
+<body>
+
+  <main>
+
+    <!-- TODO: Get link dynamically! -->
+    <p><a href="https://github.com/LearnTeachCode/git-notes/blob/master/2017-05-10-notes.md">https://github.com/LearnTeachCode/git-notes/blob/master/2017-05-10-notes.md</a></p>
+
+    <!-- TBD: Include the notes on the page? -->
+    <section id="displaySection">
+      ...Loading Notes...
+    </section>    
+
+    <!--
+    Before sign in
+    -->
+    {% assign clientid = "f6280b81cfae11da471a" %}
+    {% if jekyll.environment == "development" %}
+      {% assign clientid = "50937a23e1d140199e95" %}
+    {% endif %}
+    <section id="loginSection">
+      <h2>Add your notes!</h2>
+      <p>
+        <a class="action" id="login" href="https://github.com/login/oauth/authorize?client_id={{clientid}}&amp;scope=public_repo">Sign in with GitHub</a>        
+      </p>
+    </section>
+
+
+    <section class="success hidden" role="status" id="messageSection">      
+    </section>
+
+    <!--
+    After sign in
+    -->
+    <section id="inputSection" class="hidden">
+      <!-- <form> Commenting out form to prevent page refresh, lazy fix for now! -->
+        <p>
+          <label>
+            <span class="label">Hi, <span id="userNameSpan">friend</span>! Add your notes:</span><br />
+            <textarea id="userText">Today I learned...</textarea>
+          </label>
+        </p>
+
+        <p>
+          <button id="submit">Submit Notes</button>
+        </p>
+      <!-- </form> -->
+    </section>
+    <!--
+    This can also be placed at the top of the page (which might be more noticeable after a page refresh.)
+    -->
+
+    <h2>Notes can include…</h2>
+    <ol>
+      <li>Your name</li>
+      <li>What you learned today</li>
+      <li>A project you’re working on</li>
+      <li>Resources and links you think others may benefit from</li>
+    </ol>
+
+    <h2>Examples…</h2>
+    <blockquote>
+      <p>My name is Ada. Today I learned how to make an application with Node, and deploy it to Heroku.</small></p>
+    </blockquote>
+
+  </main>
+
+  <script src="main.js"></script>
+</body>
+</html>

@@ -3,19 +3,69 @@ layout: default
 title: The People of Learn Teach Code
 ---
 
+{% assign clientid = "f6280b81cfae11da471a" %}
+{% if jekyll.environment == "development" %}
+  {% assign clientid = "50937a23e1d140199e95" %}
+{% endif %}
+
 <h1>The People of Learn Teach Code</h1>
+
+<!--
+Before sign in
+-->
+<section id="loginSection">
+  <h2>Add yourself!</h2>
+  <p>
+    <a class="action" id="login" href="https://github.com/login/oauth/authorize?client_id={{clientid}}&amp;scope=public_repo">Sign in with GitHub</a>        
+  </p>
+</section>
+
+<section class="success hidden" role="status" id="messageSection">      
+</section>
+
+<!--
+After sign in
+-->
+<section id="inputSection" class="hidden">
+  <!-- <form> Commenting out form to prevent page refresh, lazy fix for now! -->
+    <p>
+      <label>
+        <span class="label">Hi, <span id="userNameSpan">friend</span>! Add your profile:</span><br />
+        <textarea id="userText">## About me
+
+Tell us about yourself here
+
+
+## I’m working on
+
+Your cool project here
+
+
+## I need help with
+
+Your questions here</textarea>
+      </label>
+    </p>
+
+    <p>
+      <button id="submit">Add Profile</button>
+    </p>
+  <!-- </form> -->
+</section>
 
 <ul>
 {% for person in site.people %}
 
-	<li>
+  <li>
 
-		<a href="{{ person.url }}">
-			<h3>{{ person.name }}</h3>
-			<img src="{{ person.picture }}" alt="{{ person.name }}" width="200" />
-		</h3>
+    <a href="{{ person.url }}">
+      <h3>{{ person.name }}</h3>
+      <img src="{{ person.picture }}" alt="{{ person.name }}" width="200" />
+    </h3>
 
-	</li>
+  </li>
 
 {% endfor %}
 <ul>
+
+<script src="main.js"></script>
