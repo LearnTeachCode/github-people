@@ -2,13 +2,13 @@
 layout: default
 ---
 
-<h1>{{ person.name }}</h1>
-
-<p>area: {{ page.area }}</p>
-<p>subject: {{ page.subject }}</p>
+<h1>{{ page.name }}</h1>
 
 <p>GitHub Username: <a href="https://github.com/{{ page.github_username }}">{{ page.github_username }}</a></p>
 
 <img src="{{ page.picture }}" alt="{{ page.name }}" width="400" />
+
+<p>I’m near: {{ page.area }}</p>
+<p>I’m interested in: {{ page.subject }}</p>
 
 {{ content }}

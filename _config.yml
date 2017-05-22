@@ -1,11 +1,11 @@
 
 baseurl: "/github-people" # the subpath of your site, e.g. /blog
+repository: LearnTeachCode/github-people
+permalink: pretty
 
 # Build settings
 markdown: kramdown
-# theme: minima
-# gems:
-#   - jekyll-feed
+
 exclude:
   - Gemfile
   - Gemfile.lock
